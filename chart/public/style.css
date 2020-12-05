@@ -103,25 +103,25 @@ td {
   content: '';
 }
 
-#asksChart {
+#asksTable {
   margin-right: 16px;
 }
 
-#asksChart td.price {
+#asksTable td.price {
   color: #ff5e57;
   opacity: 0.9;
 }
 
-#bidsChart td.price {
+#bidsTable td.price {
   color: #0be881;
   opacity: 0.8;
 }
 
-#asksChart .bar {
+#asksTable .bar {
   background-color: #ff5e57;
 }
 
-#bidsChart .bar {
+#bidsTable .bar {
   background-color: #0be881;
 }
 

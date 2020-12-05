@@ -1,8 +1,8 @@
 const button = document.querySelector('.button')
-const asksChart = document.getElementById('asksChart')
-const bidsChart = document.getElementById('bidsChart')
-const asksTbody = asksChart.querySelector('tbody')
-const bidsTbody = bidsChart.querySelector('tbody')
+const asksTable = document.getElementById('asksTable')
+const bidsTable = document.getElementById('bidsTable')
+const asksTbody = asksTable.querySelector('tbody')
+const bidsTbody = bidsTable.querySelector('tbody')
 
 const LENGTH = 20
 
@@ -74,7 +74,7 @@ function createTableRow(data, index) {
   return row
 }
 
-function renderChart(data) {
+function renderTable(data) {
   const asks = data.filter((d) => d.side === 'ASK')
   const bids = data.filter((d) => d.side === 'BID')
 
@@ -97,7 +97,7 @@ button.addEventListener('click', function () {
     .get('/orderbook')
     .then((res) => {
       const { data } = res
-      renderChart(data)
+      renderTable(data)
     })
     .catch((err) => {
       console.error(err)
