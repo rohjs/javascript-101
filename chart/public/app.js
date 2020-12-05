@@ -6,10 +6,10 @@ const bidsTbody = bidsTable.querySelector('tbody')
 
 const LENGTH = 20
 
-function processData(rawData, type) {
+function processData(rawData, side) {
   let dataList = [...rawData].sort((a, b) => b.price - a.price)
 
-  if (type === 'ASK') {
+  if (side === 'ASK') {
     dataList.reverse()
   }
 
