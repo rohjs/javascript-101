@@ -4,13 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chart</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
-    <div id="chart"></div>
+    <div class="orderbook">
+      <table id="asksChart">
+        <thead>
+          <tr>
+            <th scope="col" class="price">Price</th>
+            <th scope="col" class="qty">Qty</th>
+            <th scope="col" class="total">Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
 
-    <button type="button" class="button">Fetch data</button>
+      <table id="bidsChart">
+        <thead>
+          <tr>
+            <th scope="col" class="price">Price</th>
+            <th scope="col" class="qty">Qty</th>
+            <th scope="col" class="total">Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="guide">
+        <button type="button" class="button">Load data</button>
+      </div>
+    </div>
+
     <script src="/scripts/axios/dist/axios.min.js"></script>
     <script src="/app.js"></script>
   </body>

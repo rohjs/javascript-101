@@ -4,5 +4,184 @@
 }
 
 body {
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: #f4f9fa;
+}
+
+/* TABLE */
+table {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-collapse: collapse;
+  color: #aaa;
+}
+
+tr {
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 200ms forwards ease-in;
+}
+
+th,
+td {
+  position: relative;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+th {
+  height: 24px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+td {
+  font-size: 13px;
+  height: 22px;
+}
+
+.price,
+.total {
+  width: 72px;
+}
+
+.qty {
+  width: 60px;
+  padding-right: 12px;
+}
+
+.qty,
+.total {
+  text-align: right;
+}
+
+.price {
+  text-align: left;
+}
+
+.total span {
+  position: relative;
+  z-index: 1;
+}
+
+.total .bar {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  z-index: 0;
+  height: 20px;
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+/* ORDERBOOK */
+.orderbook {
+  position: relative;
+  display: flex;
+  height: 480px;
+  padding: 8px 16px;
+  overflow: hidden;
+  background-color: #0f1e28;
+  border-radius: 5px;
+}
+
+.orderbook::before {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(211, 211, 211, 0.05);
+  content: '';
+}
+
+#asksChart {
+  margin-right: 16px;
+}
+
+#asksChart td.price {
+  color: #ff5e57;
+  opacity: 0.9;
+}
+
+#bidsChart td.price {
+  color: #0be881;
+  opacity: 0.8;
+}
+
+#asksChart .bar {
+  background-color: #ff5e57;
+}
+
+#bidsChart .bar {
+  background-color: #0be881;
+}
+
+/* GUIDE & BUTTON */
+.guide {
+  position: absolute;
+  top: 31px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #0f1e28;
+  transition: opacity 500ms ease-in 200ms;
+}
+
+.guide.hide {
+  opacity: 0;
+  z-index: 0;
+}
+
+.button {
+  width: 110px;
+  height: 48px;
+  padding: 0 16px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #575fcf;
+  border: 0;
+  border-radius: 5px;
+  transition: background-color 200ms ease-in, transform 200ms ease-in;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: #3c40c6;
+}
+
+.button:focus {
+  border: 0;
+  outline: none;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
