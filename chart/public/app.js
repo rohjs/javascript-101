@@ -1,15 +1,15 @@
 const button = document.querySelector('.button')
-const asksTable = document.getElementById('asksTable')
-const bidsTable = document.getElementById('bidsTable')
-const asksTbody = asksTable.querySelector('tbody')
-const bidsTbody = bidsTable.querySelector('tbody')
+const sellTable = document.getElementById('sellTable')
+const buyTable = document.getElementById('buyTable')
+const sellTbody = sellTable.querySelector('tbody')
+const buyTbody = buyTable.querySelector('tbody')
 
 const LENGTH = 20
 
 function processData(rawData, side) {
   let dataList = [...rawData].sort((a, b) => b.price - a.price)
 
-  if (side === 'ASK') {
+  if (side === 'SELL') {
     dataList.reverse()
   }
 
@@ -54,18 +54,14 @@ function createTableRow(data, index) {
 
   priceData.innerText = formatNumberValue(price)
   priceData.classList.add('price')
-  // priceData.setAttribute('class', 'price')
 
   qtyData.innerText = formatNumberValue(qty)
-  // qtyData.setAttribute('class', 'qty')
   qtyData.classList.add('qty')
 
   cumQtyText.innerText = formatNumberValue(cumQty)
-  // cumQtyData.setAttribute('class', 'total')
   cumQtyData.classList.add('total')
 
   cumQtyBar.setAttribute('style', `width: ${percent}%;`)
-  // cumQtyBar.setAttribute('class', 'bar')
   cumQtyBar.classList.add('bar')
   cumQtyData.append(cumQtyText, cumQtyBar)
 
@@ -75,18 +71,18 @@ function createTableRow(data, index) {
 }
 
 function renderTable(data) {
-  const asks = data.filter((d) => d.side === 'ASK')
-  const bids = data.filter((d) => d.side === 'BID')
+  const sell = data.filter((d) => d.side === 'SELL')
+  const buy = data.filter((d) => d.side === 'BUY')
 
-  const asksList = processData(asks, 'ASK')
-  const bidsList = processData(bids, 'BID')
+  const sellList = processData(sell, 'SELL')
+  const buyList = processData(buy, 'BUY')
 
-  asksList.forEach((item, i) => {
-    asksTbody.appendChild(createTableRow(item, i))
+  sellList.forEach((item, i) => {
+    sellTbody.appendChild(createTableRow(item, i))
   })
 
-  bidsList.forEach((item, i) => {
-    bidsTbody.appendChild(createTableRow(item, i))
+  buyList.forEach((item, i) => {
+    buyTbody.appendChild(createTableRow(item, i))
   })
 }
 

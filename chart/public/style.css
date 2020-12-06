@@ -103,25 +103,25 @@ td {
   content: '';
 }
 
-#asksTable {
+#sellTable {
   margin-right: 16px;
 }
 
-#asksTable td.price {
+#sellTable td.price {
   color: #ff5e57;
   opacity: 0.9;
 }
 
-#bidsTable td.price {
+#buyTable td.price {
   color: #0be881;
   opacity: 0.8;
 }
 
-#asksTable .bar {
+#sellTable .bar {
   background-color: #ff5e57;
 }
 
-#bidsTable .bar {
+#buyTable .bar {
   background-color: #0be881;
 }
 
