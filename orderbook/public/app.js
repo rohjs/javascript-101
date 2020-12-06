@@ -76,7 +76,6 @@ function createTableRow(data, index) {
   qtyData.appendChild(prettyPrice(qty, QTY_PRECISION))
 
   cumQtyBar.classList.add('bar')
-  cumQtyBar.setAttribute('aria-hidden', `true`)
   cumQtyBar.setAttribute('style', `width: ${percent}%;`)
 
   cumQtyData.classList.add('total')
