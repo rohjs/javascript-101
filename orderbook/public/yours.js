@@ -1,3 +1,5 @@
+const button = document.querySelector('.button')
+
 function processData(rawData, side) {
   /* TODO:
    * 1. side가 SELL인 데이터와 BUY인 데이터를 나눈다
