@@ -5,6 +5,8 @@ const sellTbody = sellTable.querySelector('tbody')
 const buyTbody = buyTable.querySelector('tbody')
 
 const LENGTH = 20
+const PRICE_PRECISION = 1
+const QTY_PRECISION = 4
 
 function processData(rawData, side) {
   let dataList = [...rawData].sort((a, b) => b.price - a.price)
@@ -35,8 +37,25 @@ function processData(rawData, side) {
   })
 }
 
-function formatNumberValue(value) {
-  return Number(value).toLocaleString()
+function splitFloatValue(value, precision) {
+  let integer = parseInt(value, 10)
+  let float = parseFloat(value) - integer
+  integer = integer.toLocaleString()
+  float = float.toFixed(precision).split('.')[1]
+
+  return [integer, float]
+}
+
+function prettyPrice(value, precision) {
+  const elem = document.createElement('div')
+  const decimal = document.createElement('span')
+  elem.classList.add('prettyPrice')
+
+  let [intValue, floatValue] = splitFloatValue(value, precision)
+  elem.innerText = intValue + '.'
+  decimal.innerText = floatValue
+  elem.appendChild(decimal)
+  return elem
 }
 
 function createTableRow(data, index) {
@@ -52,13 +71,13 @@ function createTableRow(data, index) {
 
   row.setAttribute('style', `animation-delay: ${animationDelay}ms;`)
 
-  priceData.innerText = formatNumberValue(price)
+  priceData.appendChild(prettyPrice(price, PRICE_PRECISION))
   priceData.classList.add('price')
 
-  qtyData.innerText = formatNumberValue(qty)
+  qtyData.appendChild(prettyPrice(qty, QTY_PRECISION))
   qtyData.classList.add('qty')
 
-  cumQtyText.innerText = formatNumberValue(cumQty)
+  cumQtyText.appendChild(prettyPrice(cumQty, QTY_PRECISION))
   cumQtyData.classList.add('total')
 
   cumQtyBar.setAttribute('style', `width: ${percent}%;`)
