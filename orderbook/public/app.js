@@ -49,7 +49,7 @@ function splitFloatValue(value, precision) {
 function prettyPrice(value, precision) {
   const elem = document.createElement('div')
   const decimal = document.createElement('span')
-  elem.classList.add('prettyPrice')
+  elem.classList.add('pretty-price')
 
   let [intValue, floatValue] = splitFloatValue(value, precision)
   elem.innerText = intValue + '.'
