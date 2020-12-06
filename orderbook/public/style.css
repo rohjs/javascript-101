@@ -82,6 +82,11 @@ td {
   opacity: 0.3;
 }
 
+.prettyPrice {
+  position: relative;
+  z-index: 1;
+}
+
 .prettyPrice span {
   opacity: 0.75;
 }
@@ -158,6 +163,7 @@ td {
   font-weight: 500;
   color: #fff;
   text-transform: uppercase;
+  white-space: nowrap;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 5px;

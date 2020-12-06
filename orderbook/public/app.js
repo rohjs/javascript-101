@@ -65,24 +65,23 @@ function createTableRow(data, index) {
   const priceData = document.createElement('td')
   const qtyData = document.createElement('td')
   const cumQtyData = document.createElement('td')
-
-  const cumQtyText = document.createElement('span')
   const cumQtyBar = document.createElement('span')
 
   row.setAttribute('style', `animation-delay: ${animationDelay}ms;`)
 
-  priceData.appendChild(prettyPrice(price, PRICE_PRECISION))
   priceData.classList.add('price')
+  priceData.appendChild(prettyPrice(price, PRICE_PRECISION))
 
-  qtyData.appendChild(prettyPrice(qty, QTY_PRECISION))
   qtyData.classList.add('qty')
+  qtyData.appendChild(prettyPrice(qty, QTY_PRECISION))
 
-  cumQtyText.appendChild(prettyPrice(cumQty, QTY_PRECISION))
-  cumQtyData.classList.add('total')
-
-  cumQtyBar.setAttribute('style', `width: ${percent}%;`)
   cumQtyBar.classList.add('bar')
-  cumQtyData.append(cumQtyText, cumQtyBar)
+  cumQtyBar.setAttribute('aria-hidden', `true`)
+  cumQtyBar.setAttribute('style', `width: ${percent}%;`)
+
+  cumQtyData.classList.add('total')
+  cumQtyData.appendChild(prettyPrice(cumQty, QTY_PRECISION))
+  cumQtyData.appendChild(cumQtyBar)
 
   row.append(priceData, qtyData, cumQtyData)
 
