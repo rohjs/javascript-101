@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 30px;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  background-color: #f4f7fa;
+}
+
+ul,
+li {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+button {
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #3f4150;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.title {
+  width: 200px;
+  margin-bottom: 16px;
+}
+
+.title img {
+  width: 100%;
+  height: auto;
+}
+
+form {
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+form h1 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #3f4150;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  margin-bottom: 8px;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  line-height: 50px;
+  color: rgba(133, 136, 150, 0.5);
+  text-align: left;
+  border: 1px solid rgba(224, 226, 231, 0.75);
+  border-radius: 6px;
+  transition: border-color 100ms ease-in;
+}
+
+.dropdown-toggle.selected {
+  color: #3f4150;
+  border-color: rgba(224, 226, 231, 1);
+}
+
+.dropdown-toggle:active {
+  border-color: rgba(224, 226, 231, 1);
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 200ms ease-in, padding 200ms ease-in,
+    max-height 200ms ease-in, box-shadow 200ms ease-in;
+}
+
+.dropdown-menu.show {
+  padding: 8px 0;
+  max-height: 280px;
+  border-color: rgba(224, 226, 231, 0.5);
+  box-shadow: 0 4px 9px 0 rgba(63, 65, 80, 0.1);
+}
+
+.dropdown-option {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  line-height: 44px;
+  text-align: left;
+}
+
+.dropdown-option:hover {
+  background-color: #f8f9fa;
+}
+
+.next-button {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  line-height: 44px;
+  color: #f8f9fa;
+  background-color: #1b1c32;
+  border-radius: 6px;
+  transition: background-color 200ms ease-in;
+}
+
+.next-button:disabled {
+  background-color: #e0e2e7;
+  cursor: not-allowed;
+}
