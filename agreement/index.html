@@ -4,35 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agreement</title>
+    <link
+      href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <style>
-    .fancy-checkbox.active {
-      background-color: hotpink;
-    }
-  </style>
   <body>
+    <h1 class="title">
+      <img src="./logo.svg" alt="김버그" />
+    </h1>
+
     <form action="/" method="POST" class="signup-form">
       <div class="form-check-all">
-        <input type="checkbox" id="checkAll" name="checkAll" />
-        <label for="checkAll">
-          김버그 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택),
-          프로모션 정보 수신(선택)에 모두 동의합니다.
-        </label>
+        <div class="checkbox-group">
+          <input type="checkbox" id="checkAll" name="checkAll" />
+          <label for="checkAll">
+            김버그 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택),
+            프로모션 정보 수신(선택)에 모두 동의합니다.
+          </label>
+        </div>
       </div>
 
       <div class="form-group">
         <div class="checkbox-group">
-          <div class="fancy-checkbox">
-            <input
-              type="checkbox"
-              id="termsOfService"
-              name="agreement"
-              value="termsOfService"
-              required
-            />
-            <span class="fake-input"></span>
-          </div>
-          <label for="termsOfService">김버그 이용약관 동의</label>
+          <input
+            type="checkbox"
+            id="termsOfService"
+            name="agreement"
+            value="termsOfService"
+            required
+          />
+          <label for="termsOfService" class="required"
+            >김버그 이용약관 동의</label
+          >
         </div>
         <div class="form-detail">
           <p>
@@ -48,17 +54,16 @@
 
       <div class="form-group">
         <div class="checkbox-group">
-          <div class="fancy-checkbox">
-            <input
-              type="checkbox"
-              id="privacyPolicy"
-              name="agreement"
-              value="privacyPolicy"
-              required
-            />
-            <span class="fake-input"></span>
-          </div>
-          <label for="privacyPolicy">개인정보 수집 및 이용 동의</label>
+          <input
+            type="checkbox"
+            id="privacyPolicy"
+            name="agreement"
+            value="privacyPolicy"
+            required
+          />
+          <label for="privacyPolicy" class="required"
+            >개인정보 수집 및 이용 동의</label
+          >
         </div>
         <div class="form-detail">
           <p>
@@ -72,15 +77,12 @@
 
       <div class="form-group">
         <div class="checkbox-group">
-          <div class="fancy-checkbox">
-            <input
-              type="checkbox"
-              id="allowPromotions"
-              name="agreement"
-              value="allowPromotions"
-            />
-            <span class="fake-input"></span>
-          </div>
+          <input
+            type="checkbox"
+            id="allowPromotions"
+            name="agreement"
+            value="allowPromotions"
+          />
           <label for="allowPromotions">프로모션 정보 수신 동의</label>
         </div>
         <div class="form-detail">
@@ -94,9 +96,10 @@
         </div>
       </div>
 
-      <button type="submit" disabled>Submit</button>
+      <button type="submit" class="next-button" disabled>확인</button>
     </form>
 
     <script src="./app.js"></script>
+    <script src="./yours.js"></script>
   </body>
 </html>

@@ -12,6 +12,7 @@ body {
   height: 100vh;
   padding-bottom: 30px;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  color: #3f4150;
   background-color: #f4f7fa;
 }
 
@@ -134,7 +135,7 @@ form h1 {
   color: #f8f9fa;
   background-color: #1b1c32;
   border-radius: 6px;
-  transition: background-color 200ms ease-in;
+  transition: background-color 150ms ease-in;
 }
 
 .next-button:disabled {

@@ -1,8 +1,6 @@
 const form = document.querySelector('.signup-form')
 const checkAll = document.querySelector('.form-check-all input')
-const checkboxes = document.querySelectorAll(
-  '.form-group .fancy-checkbox input'
-)
+const checkboxes = document.querySelectorAll('.form-group input')
 const submitButton = document.querySelector('button')
 
 const agreements = {
